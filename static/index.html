@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Term Translator</title>
+
+    <!--STYLES-->
+    <link rel="stylesheet" type="text/css" href="css/angular.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!--LIBS-->
+    <script language="JavaScript" src="lib/angular.js"></script>
+
+    <!--JS-->
+    <script language="JavaScript" src="js/app.js"></script>
+</head>
+<body ng-controller="MainController" ng-cloak>
+<div class="content">
+    <div class="from">
+        <label>from:</label><select id="from" ng-options="i for i in languages" ng-model="from"></select>
+    </div>
+    <div class="to">
+        <label>to:</label><select id="to" ng-options="i for i in languages" ng-model="to"></select>
+    </div>
+    <div class="search">
+        <input type="text" autocomplete="off" id="search" placeholder="Term" ng-model="search"
+               ng-change="updateSearch()">
+        <div class="suggestions">
+            <p>ha</p>
+            <p>ha</p>
+            <p>ha</p>
+            <p>ha</p>
+            <p>ha</p>
+        </div>
+    </div>
+    <div class="result">
+        <input type="text" id="result" readonly ng-model="result">
+    </div>
+</div>
+</body>
+</html>

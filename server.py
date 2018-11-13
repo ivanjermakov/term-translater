@@ -1,13 +1,16 @@
 import tornado.ioloop
 import tornado.web as web
 
-from search import SearchController
+from search import SearchController, LanguagesController
+from translate import TranslateController
 
 
 def make_app():
 	return web.Application([
-		# (r"/(.*)", tornado.web.StaticFileHandler, {'path': './files', 'default_filename': 'index.html'}),
+		(r'/t', TranslateController),
 		(r'/s', SearchController),
+		(r'/a', LanguagesController),
+		(r"/(.*)", tornado.web.StaticFileHandler, {'path': 'static/', 'default_filename': 'index.html'}),
 	])
 
 

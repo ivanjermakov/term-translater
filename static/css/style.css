@@ -1,0 +1,44 @@
+* {
+    font-size: 24px;
+}
+
+body {
+    display: grid;
+
+    margin: 0;
+    padding: 0;
+
+    height: 100vh;
+
+    align-items: center;
+    justify-items: center;
+
+    overflow-y: hidden;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+
+    /*max-width: 400px;*/
+}
+
+input[type=text] {
+    border: 1px solid silver;
+    padding: 4px;
+}
+
+select {
+    border: 1px solid silver;
+    padding: 4px;
+    margin: 0 4px;
+}
+
+.content > div {
+    margin: 4px;
+}
+
+.suggestions {
+    position: absolute;
+}

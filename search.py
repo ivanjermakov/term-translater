@@ -7,7 +7,12 @@ import wikipedia
 
 def searchResults(lang, search):
 	wikipedia.set_lang(lang)
-	return wikipedia.search(search)
+	s = wikipedia.search(search)
+	return s
+
+
+def allLanguages():
+	return list(wikipedia.languages().keys())
 
 
 class SearchController(web.RequestHandler):
@@ -19,5 +24,16 @@ class SearchController(web.RequestHandler):
 		lang = self.get_argument('l')
 		search = self.get_argument('s')
 
-		self.write(searchResults(lang, search))
-		self.content_type = 'application/json'
+		self.set_header("Content-Type", 'application/json; charset="utf-8"')
+		self.finish(json.dumps(searchResults(lang, search), ensure_ascii=False))
+
+
+class LanguagesController(web.RequestHandler):
+
+	def data_received(self, chunk):
+		pass
+
+	def get(self):
+		self.set_header("Content-Type", 'application/json; charset="utf-8"')
+		ls = allLanguages()
+		self.finish(json.dumps(ls, ensure_ascii=False))
