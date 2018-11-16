@@ -13,7 +13,7 @@ body {
     align-items: center;
     justify-items: center;
 
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
 }
 
 .content {
@@ -39,6 +39,23 @@ select {
     margin: 4px;
 }
 
+.search {
+    display: flex;
+    flex-direction: column;
+}
+
 .suggestions {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.suggestion {
+    width: 100%;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background: silver;
 }

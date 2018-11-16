@@ -26,11 +26,9 @@
         <input type="text" autocomplete="off" id="search" placeholder="Term" ng-model="search"
                ng-change="updateSearch()">
         <div class="suggestions">
-            <p>ha</p>
-            <p>ha</p>
-            <p>ha</p>
-            <p>ha</p>
-            <p>ha</p>
+            <div class="suggestion" ng-repeat="suggestion in suggestions" ng-click="translate(suggestion)">
+                {{suggestion}}
+            </div>
         </div>
     </div>
     <div class="result">
